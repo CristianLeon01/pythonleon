@@ -1,6 +1,6 @@
 
 #Construir un programa que al recibir 2 numeros enteros, diga si un numero es divisior de otro.
-
+#INCOMPLETO
 num1 = int(input("Ingrese el primer número entero: "))
 num2 = int(input("Ingrese el segundo número entero: "))
 

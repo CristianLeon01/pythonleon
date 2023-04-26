@@ -1,6 +1,7 @@
 
 #Construir un programa el cual solicite el dia de la semana en el que esta y que le imprima el dia de la semana.~
 
+#el condicional if y el elif diran si esta en un dia de la semana o en otra.
 semana = input('Escriba que semana es hoy de Lunes a Domingo: ')
 if semana == 'Lunes':
     print('El dia de la semana es Lunes')

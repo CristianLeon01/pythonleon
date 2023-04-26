@@ -1,10 +1,10 @@
 
 #Crea un algoritmo para la sucesión de Fibonacci.
 
-# Definir la cantidad de números de la serie a calcular
+# se define la cantidad de números de la serie a calcular
 n = 10
 
-# Inicializar los primeros dos números de la serie
+# iniciar con los primeros dos números de la serie
 a, b = 0, 1
 
 # Imprimir los primeros dos números de la serie
