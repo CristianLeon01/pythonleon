@@ -1,5 +1,5 @@
 
-#Se usan varios metodos del bucle for
+#Se usan varios metodos del bucle for ##
 
 #for con un condicional if
 for i in range(11):
