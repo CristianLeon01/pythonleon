@@ -1,4 +1,4 @@
-
+#incompleto
 num=1
 cont=0
 suma = 0
