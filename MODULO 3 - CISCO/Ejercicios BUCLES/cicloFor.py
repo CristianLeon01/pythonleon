@@ -15,5 +15,3 @@ for j in range (1,11):
 #for para empezar donde uno quiere, donde finaliza y como se cuenta.
 for k in range (0,11,2):
     print(k)
-
-    

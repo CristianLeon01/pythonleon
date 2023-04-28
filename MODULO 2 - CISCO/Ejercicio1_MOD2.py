@@ -7,8 +7,3 @@ edad = input("Digite su edad: ")
 
 #imprime en pantalla las variables almacenadas
 print("Su nombre es: ", nom + " " + "y tiene", edad + " " + "años")
-
-
-
-
-
