@@ -15,11 +15,24 @@ while num1 == num2:
 if num1 > num2:
         print(num1, "es el numero mayor")
         # Calcular la resta del número menor al mayor.
-        resta = num2 - num1
+        resta = num1 - num2
         print("la resta del menor al mayor es de: ", resta)
-    
+
+                
+
 elif num2 > num1:
         print(num2, "es el numero mayor")
         # Calcular la resta del número menor al mayor.
-        resta = num1 - num2
+        resta = num2 - num1
         print("la resta del menor al mayor es de: ", resta)
+
+while resta !=0:
+        print("El resultado se puede seguir restando")
+        num_resta = int(input("Digite un numero: "))
+        resta = resta - num_resta
+        print("La resta es: ", resta)
+         
+else:
+        print("fin")
+               
+               
