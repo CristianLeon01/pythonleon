@@ -10,16 +10,9 @@ for i in range (100, 500):
     print(c, d, u)
     cubo=(c**3)+(d**3)+(u**3)
     if cubo == i:
-        print("ES VALIDO")
+        print("ES VALIDO!!!!")
     else:
         print("No es valido")
 
+#for
     
-    
-        
-
-
-
-
-
-

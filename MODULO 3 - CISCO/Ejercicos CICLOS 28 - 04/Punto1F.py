@@ -1,5 +1,5 @@
-
 #Determinar los divisores de un numero introducido por teclado
+
 x=int(input('Ingrese un numero: '))
 
 for i in range(1,x):
@@ -7,4 +7,6 @@ for i in range(1,x):
         print(i, "es divisor de: ", x)
     else:
         print(i)
+
+#for
         
