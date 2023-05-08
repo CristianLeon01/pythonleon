@@ -2,6 +2,8 @@
 #La moda, la mediana y la desviacion extandar de una lista aleatoria.
 import math
 import random
+
+# Se declaran algunas variables con valores iniciales.
 sum=0
 prom=0
 mayor=0
@@ -13,35 +15,40 @@ raiz=0
 moda=0
 mediana=0
 
+# Se crea una lista vacía y se genera un número aleatorio que se usará como el tamaño de la lista.
 lista=[]
 tam=random.randint(10,20)
-print (f'En la lista hay {tam} elementos: ')
+
+# Se agrega un número aleatorio entre 0 y 100 a la lista para cada iteración del ciclo for.
 for i in range (tam):
     num=random.randrange(100)
     lista.append(num)
+    
+# Se muestra la lista.
+print (f'En la lista hay {tam} elementos: ')
 print(lista)
-print ()
+print()
 
-
+# Se calcula la suma de todos los números en la lista.
 for numeros in lista:
     sum += numeros
 print (f'La suma total es: {sum}')
 
-
+# Se calcula el promedio de los números en la lista.
 for numeros in lista:
     prom = sum//tam
 print (f'El promedio es: {prom}')
 
-
+# Se encuentra el número mayor y el número menor en la lista.
 for numeros in lista:
-        if numeros>mayor:
-            mayor=numeros
-        if numeros<menor:
-             menor=numeros
+    if numeros>mayor:
+        mayor=numeros
+    if numeros<menor:
+        menor=numeros
 print(f'El numero mayor es: {mayor} ')
 print(f'El numero menor es: {menor} ')
 
-
+# Se encuentra la mediana de los números en la lista.
 if tam % 2 == 0:
      num1 = tam // 2
      num2 = num1 -1
@@ -52,7 +59,7 @@ else:
     mediana = (lista[num_imp])
     print(f'La mediana es: {mediana}')
 
-
+# Se encuentra la moda de los números en la lista.
 max = 0
 for num in lista:
     cont = 0
@@ -64,7 +71,7 @@ for num in lista:
         moda =num
 print (f'La moda es: {moda}')
 
-
+# Se calcula la desviación estándar de los números en la lista.
 for numeros in lista:
      numeros = resta - (sum) / (prom)
      cuadrado = resta ** 2
@@ -73,7 +80,7 @@ for numeros in lista:
 raiz = math.sqrt (division)
 print(f'La desviacion extandar es: {raiz} ')
 
-
+# Se ordena la lista en orden ascendente.
 for i in range(tam-1):
     for j in range(i+1,tam):
         if lista[i]>lista[j]:
@@ -82,7 +89,7 @@ print('El orden de la lista de menor a mayor es:')
 print (lista)
 print()
 
-
+# Se ordena la lista en orden descendente.
 for i in range(tam-1):
     for j in range(i+1,tam):
         if lista[i]<lista[j]:
