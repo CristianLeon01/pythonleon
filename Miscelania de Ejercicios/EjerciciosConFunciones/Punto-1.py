@@ -46,3 +46,5 @@ print(promedioLista(l1))
 print(numero_mayor(l1))
 
 print(numero_menor(l1))
+
+#version Funciones y Listas V2
