@@ -33,7 +33,7 @@ print()
 lista_4_5 = [x for x in lista if x > 4]
 print("Lista de Cuatro a Cinco", lista_4_5)
 
-lista_pro = [lista_Apro / len(lista_Apro)]
+lista_pro = len(lista_Apro) / len(lista)
 print()
 print(lista_pro)
 

@@ -10,6 +10,32 @@ def llenarLista(tam,rango):
 
 l1=llenarLista(tam,rango)
 
+def list_mediana(lista):
+    mediana = 0 
+    if tam % 2 == 0:
+        num1 = tam // 2
+        num2 = num1 -1
+        mediana = (lista[num1]+lista[num2]) // 2
+    else:
+        num_imp = tam // 2
+        mediana = (lista[num_imp])
+          
+    return mediana
+
+
+def list_moda(lista):
+    max = 0
+    for num in lista:
+        cont = 0
+        for x in lista:
+            if num == x:
+                cont +=1
+        if cont > max:
+            max = cont
+            moda =num
+
+    return moda
+
 def sumaLista(lista):
     sum=0
     for x in lista:
@@ -37,14 +63,41 @@ def numero_menor(lista):
     return Menor
 
 
-print(l1)
+def orden_ascendente(lista):
+    for i in range(tam-1):
+        for j in range(i+1,tam):
+            if lista[i]>lista[j]:
+                lista[i],lista[j]=lista[j],lista[i]
+    return lista
 
-print(sumaLista(l1))
 
-print(promedioLista(l1))
+def orden_descendente(lista):
+    for i in range(tam-1):
+        for j in range(i+1,tam):
+            if lista[i]<lista[j]:
+                lista[i],lista[j]=lista[j],lista[i]
+    return lista
 
-print(numero_mayor(l1))
 
-print(numero_menor(l1))
+print()
+print("Lista Original:",l1)
 
+print()
+print("Lista de Suma:",sumaLista(l1))
+print()
+
+print("Lista Promedio:",promedioLista(l1))
+print()
+
+print("Numero Mayor:",numero_mayor(l1))
+print("Numero Menor:",numero_menor(l1))
+print()
+
+print("Lista en Orden ascendente:",orden_ascendente(l1))
+print("Lista en Orden descendente:",orden_descendente(l1))
+print()
+
+print("Mediana:",list_mediana(l1))
+print("Moda:",list_moda(l1))
+print()
 #version Funciones y Listas V2
