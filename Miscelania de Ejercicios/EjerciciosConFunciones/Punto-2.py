@@ -5,8 +5,8 @@ def llenarLista(tam,rango):
     lista=[random.randrange(rango) for i in range(tam)]
     return lista
 
-l1 = llenarLista(10,40)
-l2 = llenarLista(10,40)
+l1 = llenarLista(15,100)
+l2 = llenarLista(15,100)
 
 print("La lista Numero 1 es la siguiente:",l1)
 print("La lista Numero 2 es la siguiente:",l2)
@@ -58,7 +58,14 @@ def promedioLista(lista):
 
 def pro_may_men():
     if promedioLista(l1) > prom_conjunto():
-        print()
+        return "La lista N1 es mayor al promedio del conjunto",promedioLista(l1)
+    elif promedioLista(l2) > prom_conjunto():
+        return "La lista N2 es mayor al promedio del conjunto",promedioLista(l2)
+    else:
+        return "Los dos promedios estan por debajo del promedio conjunto:",prom_conjunto()
+
+
+
 
 
 
@@ -72,6 +79,9 @@ print()
 print("El promedio de la lista N1 es:",promedioLista(l1))
 print("El promedio de la lista N2 es:",promedioLista(l2))
 print()
+print(pro_may_men())
+
+
 
 
 
