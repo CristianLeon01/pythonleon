@@ -1,4 +1,4 @@
-from Persona import *
+from Persona import * 
 from Instructor import *
 from Coordinador import *
 
