@@ -1,17 +1,17 @@
 def agregarDatos(NombreArchivo):
     try:
-        archivo = open(NombreArchivo)
-        Nombre=print(input("Digite su nombre"))
-        Numero=print(input("Digite su numero de telefono"))
-        Sexo=print(input("Digite su tipo de sexo"))
-        datos = (Nombre, Numero, Sexo)
-        NombreArchivo.append(datos)
-        archivo.close() 
+        with open(NombreArchivo, "w") as archivo:
 
-    except FileNotFoundError:
-        print('El archivo no existe.')
-    except:
-        print('Algo salio mal')
+            Nombre = input("Digite su nombre: ")
+            Numero = input("Digite su numero de telefono: ")
+            Sexo = input("Digite su tipo de sexo: ")
 
-NombreArchivo = "C:\\pythonleon\\CISCO\\datosPersonales.txt"
+            archivo.write(f"{Nombre},{Numero},{Sexo}\n")
+
+        print('Datos agregados correctamente al archivo.')
+
+    except Exception:
+        print('Algo salio mal:')
+
+NombreArchivo = "C:\\Clon Respositorio\\pythonleon\\CISCO\\datosPersonales01.txt"
 agregarDatos(NombreArchivo)

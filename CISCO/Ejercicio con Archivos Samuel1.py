@@ -10,7 +10,7 @@ def VerificacionArchivo(NombreArchivo):
     except:
         print('Algo salio mal')
 
-NombreArchivo = "C:\\pythonleon\\CISCO\\archivoPrueba.txt"
+NombreArchivo = "C:\\Clon Respositorio\\pythonleon\\CISCO\\archivoPrueba.txt"
 VerificacionArchivo(NombreArchivo)
 
 
