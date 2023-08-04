@@ -1,0 +1,4 @@
+Suma de las notas del primer examen: 91.5
+Suma de las notas del segundo examen: 92.5
+Suma de las notas del segundo examen: 98.5
+ 
