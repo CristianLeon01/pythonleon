@@ -1,46 +1,52 @@
 import mysql.connector
 
-db=mysql.connector.connect(
-    host = "localhost",
-    user = "root",
-    password = "",
-    database = "contratosPSN"
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="",
+    database="contratosPSN"
 )
 
-class Candidato ():
+class Candidato():
     def __init__(self, tipoDocumento, numDocumento, nombre, email, telefono):
         self.__tipoDocumento = tipoDocumento
-        self.__numDocumento = numDocumento 
+        self.__numDocumento = numDocumento
         self.__nombre = nombre
         self.__email = email
         self.__telefono = telefono
 
-    def getTipoDocumento (self):
+    def getTipoDocumento(self):
         return self.__tipoDocumento
-    
-    def getNumDocumento (self):
+
+    def getNumDocumento(self):
         return self.__numDocumento
-    
-    def getNombre (self):
+
+    def getNombre(self):
         return self.__nombre
-    
-    def getEmail (self):
+
+    def getEmail(self):
         return self.__email
-    
-    def getTelefono (self):
+
+    def getTelefono(self):
         return self.__telefono
-    
-    def agregarCandidatos ():
+
+    def agregarCandidato():
         tipoDocumento = input("Ingrese su tipo de documento:")
-        numDocumento = int(input ("Ingrese su numero de documento:"))
+        numDocumento = int(input("Ingrese su numero de documento:"))
         nombre = input("Ingrese su nombre:")
         email = input("Ingrese su correo electronico:")
-        telefono = int(input("Ingrese su numero de telefono:"))
-        insert = ("insert into candidato (tipoDocumento, numDocumento, nombre, email, telefono) VALUES ('"+tipoDocumento+"', '" +numDocumento+ "', '" +nombre+ "', '"+email+ "', '" +telefono+"')")   
-        cursor = db.cursor()
-        cursor.execute (insert,cursor)
+        telefono = (input("Ingrese su numero de telefono:"))
 
-    agregarCandidatos ()
-    
-    def getDatos (self):
-        return self.__tipoDocumento, self.__numDocumento, self.__nombre, self.__email, self.__telefono
+        insertar = "INSERT INTO candidato (tipoDocumento, numDocumento, nombre, email, telefono) VALUES (%s, %s, %s, %s, %s)"
+        valores = (tipoDocumento, numDocumento, nombre, email, telefono)
+
+        cursor = db.cursor()
+        cursor.execute(insertar, valores)
+        db.commit()
+        cursor.close()
+
+    def getDatos(self):
+        return self.getTipoDocumento(), self.getNumDocumento(), self.getNombre(), self.getEmail(), self.getTelefono()
+
+
+Candidato.agregarCandidato()
