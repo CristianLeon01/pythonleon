@@ -30,6 +30,9 @@ class Candidato():
     def getTelefono(self):
         return self.__telefono
 
+    def getDatos(self):
+        return self.getTipoDocumento(), self.getNumDocumento(), self.getNombre(), self.getEmail(), self.getTelefono()
+    
     def agregarCandidato():
         tipoDocumento = input("Ingrese su tipo de documento:")
         numDocumento = int(input("Ingrese su numero de documento:"))
@@ -45,8 +48,27 @@ class Candidato():
         db.commit()
         cursor.close()
 
-    def getDatos(self):
-        return self.getTipoDocumento(), self.getNumDocumento(), self.getNombre(), self.getEmail(), self.getTelefono()
+    
+    def consultarDatos():
+        campo = input('Ingrese el campo a consultar:')
+        consulta = f"SELECT {campo} FROM candidato;"
+        print(consulta)
+
+        cursor = db.cursor()
+        cursor.execute(consulta)
+        for dato in cursor:
+            print(dato)
+        cursor.close()
 
 
-Candidato.agregarCandidato()
+    def eliminarDatos():
+        campo = input('Ingrese el campo a consultar:')
+        dato = input('Ingrese el dato a eliminar:')
+        eliminar = f"DELETE FROM candidato WHERE {campo}={dato};"
+        print(eliminar)
+
+        cursor = db.cursor()
+        cursor.execute(eliminar, dato)
+        for dato in cursor:
+            pass
+        cursor.close()
