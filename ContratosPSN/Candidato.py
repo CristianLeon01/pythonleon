@@ -61,14 +61,41 @@ class Candidato():
         cursor.close()
 
 
+    def agregarCampo():
+        campo = input('Ingrese el nombre del nuevo campo:')
+        tipoDato = input('Ingrese el tipo de dato y el limite de caracteres del campo:')
+        agrCampo = f"ALTER TABLE candidato ADD COLUMN {campo} {tipoDato};"
+        print(agrCampo)
+
+        cursor = db.cursor()
+        cursor.execute(agrCampo)
+        db.commit()
+        cursor.close()
+
+
     def eliminarDatos():
         campo = input('Ingrese el campo a consultar:')
         dato = input('Ingrese el dato a eliminar:')
-        eliminar = f"DELETE FROM candidato WHERE {campo}={dato};"
+        eliminar = f"DELETE FROM candidato WHERE {campo} = %s;"
         print(eliminar)
 
         cursor = db.cursor()
-        cursor.execute(eliminar, dato)
-        for dato in cursor:
-            pass
+        cursor.execute(eliminar, (dato,))
+        db.commit()
         cursor.close()
+
+    
+    def modificarRegistro():
+        campo1 = input('Ingrese el nombre del campo actual:')
+        dato1 = input('Ingrese el dato nuevo del campo que eligió:')
+        campo2 = input('Ingrese un campo relacionado con el dato a cambiar:')
+        dato2 = input('Ingrese el dato del campo relacionado que eligió:')
+        
+        mfcarRegistro = f"UPDATE candidato SET {campo1} = %s WHERE {campo2} = %s;"
+        print(mfcarRegistro)
+
+        cursor = db.cursor()
+        cursor.execute(mfcarRegistro, (dato1, dato2))
+        db.commit()
+        cursor.close()
+
